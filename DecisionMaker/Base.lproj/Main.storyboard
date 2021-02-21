@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6JZ-y2-n9A">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Dice-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="DiceViewController" customModule="DecisionMaker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newbackground" translatesAutoresizingMaskIntoConstraints="NO" id="rgm-mX-Aoc">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" distribution="equalSpacing" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="v0v-FM-iid">
+                                <rect key="frame" x="52" y="259" width="310" height="150"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dice1" translatesAutoresizingMaskIntoConstraints="NO" id="YoG-LP-d7O">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dice1" translatesAutoresizingMaskIntoConstraints="NO" id="Feu-2O-3dC">
+                                        <rect key="frame" x="160" y="0.0" width="150" height="150"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qIS-D5-jY2">
+                                <rect key="frame" x="141" y="449" width="132" height="50"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="uIZ-Jd-4tf"/>
+                                </constraints>
+                                <state key="normal" title="Roll">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="rollTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ucR-1d-vg7"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shak or Roll" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2x-Ft-ncx">
+                                <rect key="frame" x="140" y="59" width="134.5" height="34.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total: 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLk-b1-Zaa">
+                                <rect key="frame" x="174" y="123.5" width="66.5" height="27.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="v0v-FM-iid" secondAttribute="trailing" constant="52" id="4Bx-Ba-f1w"/>
+                            <constraint firstItem="wLk-b1-Zaa" firstAttribute="top" secondItem="M2x-Ft-ncx" secondAttribute="bottom" constant="30" id="88p-wx-fND"/>
+                            <constraint firstItem="rgm-mX-Aoc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8p9-Zh-2ca"/>
+                            <constraint firstItem="qIS-D5-jY2" firstAttribute="top" secondItem="v0v-FM-iid" secondAttribute="bottom" constant="40" id="A9k-Vx-hWV"/>
+                            <constraint firstAttribute="bottom" secondItem="rgm-mX-Aoc" secondAttribute="bottom" id="DpL-2T-8xN"/>
+                            <constraint firstItem="qIS-D5-jY2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="141" id="Q4i-Wu-c6L"/>
+                            <constraint firstItem="wLk-b1-Zaa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="b9z-ch-w9l"/>
+                            <constraint firstItem="v0v-FM-iid" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="215" id="fS4-Pq-CiD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qIS-D5-jY2" secondAttribute="trailing" constant="141" id="fgY-Q2-gJs"/>
+                            <constraint firstAttribute="trailing" secondItem="rgm-mX-Aoc" secondAttribute="trailing" id="gjA-TJ-1QF"/>
+                            <constraint firstItem="v0v-FM-iid" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="52" id="h6i-EV-LLB"/>
+                            <constraint firstItem="rgm-mX-Aoc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="pDJ-lx-U6h"/>
+                            <constraint firstItem="M2x-Ft-ncx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="uaD-uv-WIP"/>
+                            <constraint firstItem="M2x-Ft-ncx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yB6-mB-A5q"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Dice" id="NaJ-Sf-cYZ"/>
+                    <connections>
+                        <outlet property="diceOne" destination="YoG-LP-d7O" id="KdR-fK-f7l"/>
+                        <outlet property="diceTwo" destination="Feu-2O-3dC" id="eSD-ZZ-9yT"/>
+                        <outlet property="totalLabel" destination="wLk-b1-Zaa" id="vUI-tY-bPO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="906" y="-347"/>
+        </scene>
+        <!--Coin Flip-->
+        <scene sceneID="KIT-A9-fOl">
+            <objects>
+                <viewController id="wGt-2P-I9c" customClass="CoinFlipViewController" customModule="DecisionMaker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="s5M-YS-mZx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IDN-Ib-m0W">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coin1" translatesAutoresizingMaskIntoConstraints="NO" id="kD0-WY-GQx">
+                                <rect key="frame" x="121" y="368" width="172" height="160"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZF-Od-rIx">
+                                <rect key="frame" x="143" y="598" width="128" height="30"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <state key="normal" title="Flip or Shake">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="flipTapped:" destination="wGt-2P-I9c" eventType="touchUpInside" id="I3m-7I-bT5"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heads" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1I-fB-zUO">
+                                <rect key="frame" x="182.5" y="114" width="49" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PMm-Dq-9hO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kD0-WY-GQx" firstAttribute="top" secondItem="PMm-Dq-9hO" secondAttribute="top" constant="324" id="9uu-Kf-f6W"/>
+                            <constraint firstAttribute="trailing" secondItem="IDN-Ib-m0W" secondAttribute="trailing" id="AhK-5l-ni1"/>
+                            <constraint firstItem="Q1I-fB-zUO" firstAttribute="centerX" secondItem="s5M-YS-mZx" secondAttribute="centerX" id="JQX-Hh-bjr"/>
+                            <constraint firstItem="PMm-Dq-9hO" firstAttribute="trailing" secondItem="aZF-Od-rIx" secondAttribute="trailing" constant="143" id="OA8-XO-6Kg"/>
+                            <constraint firstItem="IDN-Ib-m0W" firstAttribute="top" secondItem="s5M-YS-mZx" secondAttribute="top" id="QRW-ml-39C"/>
+                            <constraint firstItem="Q1I-fB-zUO" firstAttribute="top" secondItem="PMm-Dq-9hO" secondAttribute="top" constant="70" id="U1F-Au-Uju"/>
+                            <constraint firstItem="kD0-WY-GQx" firstAttribute="centerX" secondItem="s5M-YS-mZx" secondAttribute="centerX" id="dKq-yZ-UV3"/>
+                            <constraint firstAttribute="bottom" secondItem="IDN-Ib-m0W" secondAttribute="bottom" id="g63-ae-IIl"/>
+                            <constraint firstItem="kD0-WY-GQx" firstAttribute="centerY" secondItem="s5M-YS-mZx" secondAttribute="centerY" id="ogE-cH-ZqV"/>
+                            <constraint firstItem="kD0-WY-GQx" firstAttribute="leading" secondItem="PMm-Dq-9hO" secondAttribute="leading" constant="121" id="pfU-cj-EGY"/>
+                            <constraint firstItem="IDN-Ib-m0W" firstAttribute="leading" secondItem="s5M-YS-mZx" secondAttribute="leading" id="tqX-tO-JBo"/>
+                            <constraint firstItem="kD0-WY-GQx" firstAttribute="centerX" secondItem="aZF-Od-rIx" secondAttribute="centerX" id="vxD-GR-Wmo"/>
+                            <constraint firstItem="aZF-Od-rIx" firstAttribute="top" secondItem="kD0-WY-GQx" secondAttribute="bottom" constant="70" id="x6g-eA-y9B"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Coin Flip" id="OWq-zs-t4Y"/>
+                    <connections>
+                        <outlet property="coin" destination="kD0-WY-GQx" id="o4W-oB-VIF"/>
+                        <outlet property="headsOrTailsLabel" destination="Q1I-fB-zUO" id="q1P-sh-hwT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HVV-Le-A2M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="905.79710144927549" y="616.74107142857144"/>
+        </scene>
+        <!--Wheel-->
+        <scene sceneID="Zmh-o9-uEj">
+            <objects>
+                <viewController id="KxM-Ts-8st" customClass="WheelViewController" customModule="DecisionMaker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nXO-0T-ab7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="V9y-Ws-QEr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Wheel" id="sec-5E-oOM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iKK-BN-pKV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1597" y="119"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="bZ6-t8-jb3">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="6JZ-y2-n9A" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0Ef-j7-JZ8">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="oKL-5I-GaX"/>
+                        <segue destination="wGt-2P-I9c" kind="relationship" relationship="viewControllers" id="OSF-rf-dEn"/>
+                        <segue destination="KxM-Ts-8st" kind="relationship" relationship="viewControllers" id="5NI-n3-mfd"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3lh-4l-ofj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="coin1" width="64" height="64"/>
+        <image name="dice1" width="150" height="150"/>
+        <image name="newbackground" width="333.5" height="311"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
