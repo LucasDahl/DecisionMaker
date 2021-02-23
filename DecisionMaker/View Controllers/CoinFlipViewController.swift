@@ -14,16 +14,22 @@ class CoinFlipViewController: UIViewController {
     //=================
     
     let coins = ["coin1", "coin2"]
+    var backgroundIndex = 1
     
     // Outlets
     @IBOutlet weak var coin: UIImageView!
     @IBOutlet weak var headsOrTailsLabel: UILabel!
+    @IBOutlet weak var flipButton: UIButton!
+    @IBOutlet weak var backgroundImage: UIImageView!
     
     override func viewDidLoad() {
         super .viewDidLoad()
         
         // Allow for shake gesture
         self.becomeFirstResponder()
+        
+        // Setup the buttons
+        flipButton.layer.cornerRadius = Constants.buttonCorners
         
     }
     
@@ -36,6 +42,7 @@ class CoinFlipViewController: UIViewController {
         // Get a random number
         let headsTails = Int(arc4random_uniform(2))
         
+        
         // Set the coing image
         coin.image = UIImage(named: coins[headsTails])
         
@@ -45,6 +52,18 @@ class CoinFlipViewController: UIViewController {
         } else {
             headsOrTailsLabel.text = "Tails!"
         }
+        
+        // Set the background image
+        backgroundImage.image = UIImage(named: "background\(backgroundIndex)")
+        
+        // Increase the index, but check that its not more
+        // than 4
+        if(backgroundIndex < 4) {
+            backgroundIndex += 1
+        } else if (backgroundIndex == 4) {
+            backgroundIndex = 1
+        }
+        
     }
     
     // We are willing to become first responder to get shake motion
@@ -68,6 +87,15 @@ class CoinFlipViewController: UIViewController {
     
     @IBAction func flipTapped(_ sender: Any) {
         flipCoin()
+    }
+    
+    
+    @IBAction func menuTapped(_ sender: Any) {
+        let VC1 = self.storyboard!.instantiateViewController(withIdentifier: Constants.storyboard.menuVC) as! MenuViewController
+        let navController = UINavigationController(rootViewController: VC1) // Creating a navigation controller with VC1 at the root of the navigation stack.
+        navController.modalPresentationStyle = .overCurrentContext
+        self.present(navController, animated:true, completion: nil)
+        
     }
     
 }

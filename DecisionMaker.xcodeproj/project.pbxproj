@@ -7,7 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9593B17225E1FFD2002C9DD1 /* WheelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9593B17125E1FFD2002C9DD1 /* WheelViewController.swift */; };
+		95050E3925E4BA15005485DA /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95050E3825E4BA15005485DA /* MenuViewController.swift */; };
+		9514A05925E5AE4600901847 /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9514A05825E5AE4600901847 /* IAPManager.swift */; };
+		9514A05D25E5B28100901847 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9514A05C25E5B28100901847 /* StoreKit.framework */; };
+		9545D49125E308F40041C80E /* RandomNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9545D49025E308F40041C80E /* RandomNumberViewController.swift */; };
+		9545D49425E309750041C80E /* EightBallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9545D49325E309750041C80E /* EightBallViewController.swift */; };
+		957232D425E465B100A80D47 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957232D325E465B100A80D47 /* ButtonStyle.swift */; };
+		9593B18325E20B27002C9DD1 /* ItemPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9593B18225E20B27002C9DD1 /* ItemPickerViewController.swift */; };
+		95A03D3925E4377200B51F39 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A03D3825E4377200B51F39 /* Constants.swift */; };
 		95CC21C225E1C0E0003D0816 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC21C125E1C0E0003D0816 /* AppDelegate.swift */; };
 		95CC21C425E1C0E0003D0816 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC21C325E1C0E0003D0816 /* SceneDelegate.swift */; };
 		95CC21C925E1C0E0003D0816 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95CC21C725E1C0E0003D0816 /* Main.storyboard */; };
@@ -18,7 +25,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9593B17125E1FFD2002C9DD1 /* WheelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelViewController.swift; sourceTree = "<group>"; };
+		95050E3825E4BA15005485DA /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		9514A05825E5AE4600901847 /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
+		9514A05C25E5B28100901847 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		9514A06025E5BDCE00901847 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
+		9545D49025E308F40041C80E /* RandomNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberViewController.swift; sourceTree = "<group>"; };
+		9545D49325E309750041C80E /* EightBallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EightBallViewController.swift; sourceTree = "<group>"; };
+		957232D325E465B100A80D47 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
+		9593B18225E20B27002C9DD1 /* ItemPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPickerViewController.swift; sourceTree = "<group>"; };
+		95A03D3825E4377200B51F39 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		95CC21BE25E1C0E0003D0816 /* DecisionMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DecisionMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CC21C125E1C0E0003D0816 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95CC21C325E1C0E0003D0816 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,17 +50,44 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9514A05D25E5B28100901847 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9514A05B25E5B28100901847 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9514A05C25E5B28100901847 /* StoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9545D49A25E379540041C80E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				95A03D3825E4377200B51F39 /* Constants.swift */,
+				9514A05825E5AE4600901847 /* IAPManager.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		957232D225E4658D00A80D47 /* Styling */ = {
+			isa = PBXGroup;
+			children = (
+				957232D325E465B100A80D47 /* ButtonStyle.swift */,
+			);
+			path = Styling;
+			sourceTree = "<group>";
+		};
 		95CC21B525E1C0E0003D0816 = {
 			isa = PBXGroup;
 			children = (
 				95CC21C025E1C0E0003D0816 /* DecisionMaker */,
 				95CC21BF25E1C0E0003D0816 /* Products */,
+				9514A05B25E5B28100901847 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,6 +105,9 @@
 				95CC21C125E1C0E0003D0816 /* AppDelegate.swift */,
 				95CC21C325E1C0E0003D0816 /* SceneDelegate.swift */,
 				95CC21DB25E1CC16003D0816 /* View Controllers */,
+				957232D225E4658D00A80D47 /* Styling */,
+				9545D49A25E379540041C80E /* Helpers */,
+				9514A06025E5BDCE00901847 /* Configuration.storekit */,
 				95CC21C725E1C0E0003D0816 /* Main.storyboard */,
 				95CC21CA25E1C0E1003D0816 /* Assets.xcassets */,
 				95CC21CC25E1C0E1003D0816 /* LaunchScreen.storyboard */,
@@ -76,7 +121,10 @@
 			children = (
 				95CC21D725E1CA1B003D0816 /* DiceViewController.swift */,
 				95CC21DC25E1CC35003D0816 /* CoinFlipViewController.swift */,
-				9593B17125E1FFD2002C9DD1 /* WheelViewController.swift */,
+				9593B18225E20B27002C9DD1 /* ItemPickerViewController.swift */,
+				9545D49025E308F40041C80E /* RandomNumberViewController.swift */,
+				9545D49325E309750041C80E /* EightBallViewController.swift */,
+				95050E3825E4BA15005485DA /* MenuViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -151,11 +199,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9593B18325E20B27002C9DD1 /* ItemPickerViewController.swift in Sources */,
+				95050E3925E4BA15005485DA /* MenuViewController.swift in Sources */,
+				9514A05925E5AE4600901847 /* IAPManager.swift in Sources */,
+				9545D49425E309750041C80E /* EightBallViewController.swift in Sources */,
 				95CC21C225E1C0E0003D0816 /* AppDelegate.swift in Sources */,
 				95CC21D825E1CA1B003D0816 /* DiceViewController.swift in Sources */,
-				9593B17225E1FFD2002C9DD1 /* WheelViewController.swift in Sources */,
 				95CC21DD25E1CC35003D0816 /* CoinFlipViewController.swift in Sources */,
+				9545D49125E308F40041C80E /* RandomNumberViewController.swift in Sources */,
+				957232D425E465B100A80D47 /* ButtonStyle.swift in Sources */,
 				95CC21C425E1C0E0003D0816 /* SceneDelegate.swift in Sources */,
+				95A03D3925E4377200B51F39 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,7 +286,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -287,7 +341,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
