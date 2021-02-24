@@ -86,7 +86,7 @@ class ItemPickerViewController: UIViewController {
             // Change the text of teh button
             getButton.setTitle("Again?", for: .normal)
         } else {
-            let alertController = UIAlertController(title: "Alert", message: "Nothing was Added.", preferredStyle: UIAlertController.Style.alert)
+            let alertController = UIAlertController(title: "Alert", message: "You didn't add anything.", preferredStyle: UIAlertController.Style.alert)
             alertController.addAction(UIAlertAction(title: "Accept", style: UIAlertAction.Style.default,handler: nil))
             self.present(alertController, animated: true, completion: nil)
         }

@@ -58,6 +58,10 @@ class RandomNumberViewController: UIViewController, UIPickerViewDelegate, UIPick
         return "\(numbers[row])"
     }
     
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        return NSAttributedString(string: "\(numbers[row])", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+    }
+    
     func generateNumber() {
         
         let min = Int(minNumField.text!)

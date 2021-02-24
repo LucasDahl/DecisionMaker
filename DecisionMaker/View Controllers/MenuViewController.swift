@@ -7,8 +7,9 @@
 
 import UIKit
 import StoreKit
+import MessageUI
 
-class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate {
     
     //=================
     // MARK: Properties
@@ -18,7 +19,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     let productID: NSString = "com.lucas.DecisionMaker"
     let defaults = UserDefaults.standard
     let sections = ["Buy", "Feedback"]
-    let titleOfCell = [["Purchase to remove adds","Restore purchases"], ["Feedback"]]
+    let titleOfCell = [["Purchase to remove ads","Restore purchases"], ["Feedback"]]
     
     // Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -44,11 +45,28 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func restorePurchase() {
-        IAPManager.shared.purchase(product: .adsRemoved)
+        IAPManager.shared.restorePurchase()
     }
     
     func feedback() {
         
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients(["LucasDahlApp@gmail.com"])
+            mail.setSubject("Feed back on App")
+            
+            present(mail, animated: true)
+        } else {
+            let alertController = UIAlertController(title: "Alert", message: "Could not generate email.", preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "Accept", style: UIAlertAction.Style.default,handler: nil))
+            self.present(alertController, animated: true, completion: nil)
+        }
+        
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
     }
     
     
@@ -85,7 +103,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         let indexCell = titleOfCell[indexPath.section][indexPath.row]
         
         switch indexCell {
-        case "Purchase to remove adds":
+        case "Purchase to remove ads":
             purchase()
             break
         case "Restore purchases":

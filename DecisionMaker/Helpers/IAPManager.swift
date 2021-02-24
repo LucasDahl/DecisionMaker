@@ -70,6 +70,8 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
         
     }
     
+    
+    
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         
         transactions.forEach { (transaction) in
@@ -81,7 +83,7 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
                     handlePurchase(transaction.payment.productIdentifier)
                     break
                 case .restored:
-                    handlePurchase(transaction.payment.productIdentifier)
+                    restorePurchase()
                     break
                 case .failed:
                     print("failed")
@@ -96,10 +98,14 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
     }
     
     // Removes ads once purchased
-    private func handlePurchase(_ id: String) {
+    func handlePurchase(_ id: String) {
         
         UserDefaults.standard.set(true, forKey: "adsRemoved")
         
+    }
+    
+    func restorePurchase() {
+        SKPaymentQueue.default().restoreCompletedTransactions()
     }
     
 }
