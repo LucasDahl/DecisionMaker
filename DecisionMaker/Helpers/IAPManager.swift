@@ -40,18 +40,7 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
     }
     
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-        
-//        products = response.products
-//
-//        // Check if there is a first product
-//        guard let product = products.first else {
-//            return
-//        }
-//
-//        purchase(product: product)
-        
         self.products = response.products
-        
     }
     
     func request(_ request: SKRequest, didFailWithError error: Error) {
@@ -59,8 +48,6 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
             return
         }
         
-        // TODO: Add popup action
-        print("Failed fetch request")
         
     }
     

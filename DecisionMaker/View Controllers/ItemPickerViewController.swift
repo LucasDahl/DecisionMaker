@@ -47,6 +47,7 @@ class ItemPickerViewController: UIViewController {
         itemTextField.resignFirstResponder()
     }
     
+    
     //================
     // MARK: IBActions
     //================
@@ -85,7 +86,9 @@ class ItemPickerViewController: UIViewController {
             // Change the text of teh button
             getButton.setTitle("Again?", for: .normal)
         } else {
-            // Add popup action
+            let alertController = UIAlertController(title: "Alert", message: "Nothing was Added.", preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "Accept", style: UIAlertAction.Style.default,handler: nil))
+            self.present(alertController, animated: true, completion: nil)
         }
         
         // Dismiss the keyboard

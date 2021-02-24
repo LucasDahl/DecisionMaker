@@ -17,8 +17,8 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     let productID: NSString = "com.lucas.DecisionMaker"
     let defaults = UserDefaults.standard
-    let sections = ["Buy", "Feedback", "share"]
-    let titleOfCell = [["Purchase to remove adds","Restore purchases"], ["Feedback", "Write a review"], ["email", "message", "share"]]
+    let sections = ["Buy", "Feedback"]
+    let titleOfCell = [["Purchase to remove adds","Restore purchases"], ["Feedback"]]
     
     // Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -51,34 +51,6 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
-    func writeReview() {
-        
-    }
-    
-    func emailApp() {
-        
-    }
-    
-    func messageApp() {
-        
-    }
-    
-    func shareApp() {
-        // text to share
-        let text = "This is some text that I want to share."
-        
-        // set up activity view controller
-        let textToShare = [ text ]
-        let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
-        activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
-        
-        // exclude some activity types from the list (optional)
-        activityViewController.excludedActivityTypes = [UIActivity.ActivityType.postToFacebook ]
-        
-        // present the view controller
-        self.present(activityViewController, animated: true, completion: nil)
-        
-    }
     
     //========================================
     
@@ -121,18 +93,6 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
             break
         case "Feedback":
             feedback()
-            break
-        case "Write a review":
-            writeReview()
-            break
-        case "email":
-            emailApp()
-            break
-        case "message":
-            messageApp()
-            break
-        case "share":
-            shareApp()
             break
         default:
             break
